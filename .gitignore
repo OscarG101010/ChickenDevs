@@ -1,0 +1,60 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio Code
+.vscode/
+
+# Rider / JetBrains
+.idea/
+*.sln.iml
+
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+
+# ASP.NET Core / local configuration
+appsettings.Development.json
+appsettings.Local.json
+
+# User-specific files
+*.rsuser
+
+# Logs
+*.log
+
+# Test results
+TestResults/
+[Tt]est[Rr]esult*/
+
+# Coverage
+coverage/
+*.coverage
+*.coveragexml
+
+# Database files
+*.db
+*.db-shm
+*.db-wal
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
