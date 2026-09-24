@@ -8,19 +8,20 @@
         public void Agregar(Producto p)
         {
             var item = Items.FirstOrDefault(i => i.Producto.Sku == p.Sku);
+
             if (item is null)
                 Items.Add(new ItemCarrito { Producto = p, Cantidad = 1 });
             else
                 item.Cantidad++;
         }
 
-        public void Quitar(string sku) => Items.RemoveAll(i => i.Producto.Sku == sku);
+        public void Quitar(string sku) => Items.RemoveAll(i => i.Producto.Sku == sku); // elimina todos los elementos que cumplan la condición
     }
+
     public class ItemCarrito
     {
         public Producto Producto { get; set; } = new();
         public int Cantidad { get; set; }
         public decimal Subtotal => Producto.Precio * Cantidad;
     }
-
 }

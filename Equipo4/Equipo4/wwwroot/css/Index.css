@@ -44,8 +44,14 @@ p {
 }
 
 .layout .Productos {
+    display: flex;
     flex: 3; /*en este caso se distribuye en los dos hijos*/
-    padding-top: 10px;
+    flex-direction: row;
+    padding: 30px;
+}
+
+.layout .Productos .Tarjeta{
+    padding: 30px;
 }
 
 .layout .carrito {

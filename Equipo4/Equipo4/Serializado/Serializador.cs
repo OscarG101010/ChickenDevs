@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace Equipo4
+namespace Equipo4.Serializado
 {
     public static class Serializador
     {
