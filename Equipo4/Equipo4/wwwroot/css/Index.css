@@ -8,11 +8,22 @@
     --gris: #808080;
 }
 
+html, body{
+    height: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
+
     font-family: Arial, sans-serif;
     color: var(--texto);
     margin: 0;
-    background-color: var(--amarillo)
+    background-color: var(--rojo-oscuro);
+}
+
+main{
+    flex: 1;
 }
 
 .footer {
@@ -38,6 +49,7 @@ p {
 .layout {
     display: flex;
     gap: 10px;
+
     width: 100%;
     text-align: center;
     background-color: var(--rojo-oscuro)
@@ -47,18 +59,51 @@ p {
     display: flex;
     flex: 3; /*en este caso se distribuye en los dos hijos*/
     flex-direction: row;
-    padding: 30px;
+    flex-wrap: wrap; /*hace que salte de linea al no haber espacio*/
+
+    padding: 5px;
+    margin: 5px;
 }
 
-.layout .Productos .Tarjeta{
-    padding: 30px;
+.layout .Productos .tarjeta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    padding: 15px;
+    margin: 10px;
+    background-color: var(--crema);
+        
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.layout .Productos .tarjeta img{
+    width: 80px;
+    height: 80px;
+}
+
+.layout .Productos .tarjeta .btn {
+    border-radius: 10px;
+    background-color: var(--blanco);
+    transition: background-color 0.3s ease;
+}
+
+.layout .Productos .tarjeta .btn:hover {
+    background-color: var(--rojo);
+}
+
+.layout .Productos .tarjeta .btn:active {
+    transform: scale(0.90);
+    background-color: var(--rojo);
 }
 
 .layout .carrito {
     flex: 1; /*sirve para distribuir el espacio disponible*/
-    border-radius: 10%;
+    border-radius: 10px;
     box-shadow: 1px 1px 10px;
     background-color: var(--crema);
+
     padding: 10px;
     margin: 10px;
 }
@@ -75,7 +120,15 @@ p {
     width: 40px;
     height: 40px;
     object-fit: cover;
-    border-radius: 10%;
+    border-radius: 10px;
+}
+
+.layout .carrito .carrito-productos img{
+    display: block;
+    margin: auto;
+
+    width: 70px;
+    height: 70px;
 }
 
 .layout .carrito .btn {
@@ -91,4 +144,11 @@ p {
 .layout .carrito .btn:active {
     transform: scale(0.90);
     background-color: var(--rojo);
+}
+
+.carrito .carrito-productos .linea{
+    display: flex;
+    flex-direction: column;
+
+    margin: 15px;
 }

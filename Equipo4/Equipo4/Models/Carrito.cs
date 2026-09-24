@@ -2,7 +2,7 @@
 {
     public class Carrito
     {
-        public List<ItemCarrito> Items { get; set; } = new();
+        public List<ItemCarrito> Items { get; set; } = new List<ItemCarrito>();
         public decimal Total => Items.Sum(i => i.Subtotal);
 
         public void Agregar(Producto p)
