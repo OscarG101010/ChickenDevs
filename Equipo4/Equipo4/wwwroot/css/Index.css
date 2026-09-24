@@ -8,17 +8,31 @@
     --gris: #808080;
 }
 
-html, body{
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100; /* para que quede por encima de las tarjetas */
+
+    background: transparent;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+}
+
+#menu {
+    scroll-margin-top: 110px;
+}
+
+html {
+    scroll-behavior: smooth;
     height: 100%;
 }
 
 body {
     display: flex;
     flex-direction: column;
-
     font-family: Arial, sans-serif;
     color: var(--texto);
     margin: 0;
+    min-height: 100vh; /*porcentajes sobre pantalla*/
     background-color: var(--rojo-oscuro);
 }
 
@@ -26,11 +40,26 @@ main{
     flex: 1;
 }
 
-.footer {
+.footer { /*esta lógica debió de ir en layout.css*/
+    display: flex;
+    flex-direction: row;
+
     font-family: Arial, sans-serif;
     color: var(--texto);
     background-color: var(--amarillo);
-    padding: 10px 10px;
+    padding: 10px 20px;
+}
+
+.footer .mapa{
+    display: flex;
+    flex-direction:column;
+    margin-left: auto;
+}
+
+.footer .mapa iframe {
+    width: 200px;
+    height: 100px;
+    border: 0;
 }
 
 h1 {
@@ -52,7 +81,6 @@ p {
 
     width: 100%;
     text-align: center;
-    background-color: var(--rojo-oscuro)
 }
 
 .layout .Productos {
@@ -106,6 +134,8 @@ p {
 .layout .carrito {
     flex: 1; /*sirve para distribuir el espacio disponible*/
     border-radius: 10px;
+    align-self: flex-start; /*sirve para usar sólo espacio de elementos*/
+
     box-shadow: 1px 1px 10px;
     background-color: var(--crema);
 
@@ -126,6 +156,12 @@ p {
     height: 40px;
     object-fit: cover;
     border-radius: 10px;
+}
+
+.carrito .carrito-productos {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
 }
 
 .layout .carrito .carrito-productos img{
@@ -153,6 +189,8 @@ p {
     border-radius: 10px;
     background-color: var(--rojo);
     transition: background-color 0.3s ease;
+
+    margin-bottom: 10px;
 }
 
 .layout .carrito .btn:hover {
@@ -164,9 +202,13 @@ p {
     background-color: var(--rojo);
 }
 
-.carrito .carrito-productos .linea{
-    display: flex;
-    flex-direction: column;
+html,
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
 
-    margin: 15px;
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
 }

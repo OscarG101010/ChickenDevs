@@ -1,8 +1,26 @@
-﻿body {
+﻿html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+
     background-color: #BD0B0B;
 }
 
-h3, p{
+main {
+    flex: 1; /*esto si ya hace que ocupe todo el espacio del flexbox padre*/
+}
+
+.footer {
+    font-family: Arial, sans-serif;
+    color: #2B2B2B;
+    background-color: #F2E474;
+    padding: 10px 10px;
+}
+
+h1, h3, p{
     text-align: center;
 }
 
@@ -10,10 +28,27 @@ h3, p{
     display: flex;
     flex: 1;
     flex-direction: column;
+
     margin: 5px;
+    padding: 5px;
 }
 
 .tarjeta .miembros{
+    padding: 10px;
+
     border: 1px solid black;
     border-radius: 10px;
+    background-color: #F0EADD;
+    align-self: center;
+}
+
+html,
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
 }

@@ -5,7 +5,7 @@
 }
 <link rel="stylesheet" href="~/css/Index.css"/>
 
-<div class="layout">
+<div class="layout" id="menu">
     <div class="Productos">
         @foreach (var p in Model.Productos)
         {
@@ -15,7 +15,7 @@
                 <small>@p.Sku</small>
                 <h3>@p.Nombre</h3>
                 <p>@p.Descripcion</p>
-                <p>@p.Precio.ToString("C")</p> <!-- Currency -->
+                <p>Precio: @p.Precio.ToString("C")</p> <!-- Currency -->
                 <form method="post" asp-page-handler="Agregar">
                     <input type="hidden" name="sku" value="@p.Sku" />
                     <button type="submit" class="btn">Agregar al carrito</button>
@@ -34,21 +34,19 @@
             <div class="carrito-productos">
                 @foreach (var item in Model.Carrito.Items)
                 {
-                    <div class="linea">
-                        <div class="imagen">
-                            <img src="@item.Producto.ImagenUrl" alt="@item.Producto.Nombre" />
-                            <span>@item.Producto.Nombre</span>
-                        </div>
-                        <div class="detalles">
-                            <span>Cantidad: @item.Cantidad</span>
-                            <span>Precio: @item.Producto.Precio</span>
-                            <span>Subtotal: @item.Subtotal.ToString("C")</span>
-                        </div>
-                        <form method="post" asp-page-handler="Quitar">
-                            <input type="hidden" name="sku" value="@item.Producto.Sku" />
-                            <button type="submit" class="btn">Quitar</button>
-                        </form>
+                    <div class="imagen">
+                        <img src="@item.Producto.ImagenUrl" alt="@item.Producto.Nombre" />
+                        <span>@item.Producto.Nombre</span>
                     </div>
+                    <div class="detalles">
+                        <span>Cantidad: @item.Cantidad</span>
+                        <span>Precio: @item.Producto.Precio</span>
+                        <span>Subtotal: @item.Subtotal.ToString("C")</span>
+                    </div>
+                    <form method="post" asp-page-handler="Quitar">
+                        <input type="hidden" name="sku" value="@item.Producto.Sku" />
+                        <button type="submit" class="btn">Quitar</button>
+                    </form>
                 }
             </div>
             <hr>
@@ -62,7 +60,7 @@
                 </b></p>
             </div>
             <hr>
-            <button type="submit" class="btn">Proceder al pago</button>
+            <button type="submit" class="btn" onclick="alert('¡¡¡FELICIDADES!!!')">Proceder al pago</button>
         </div>
     }
 </div>
