@@ -41,7 +41,10 @@
                     <div class="detalles">
                         <span>Cantidad: @item.Cantidad</span>
                         <span>Precio: @item.Producto.Precio</span>
-                        <span>Subtotal: @item.Subtotal.ToString("C")</span>
+                        @if (item.Cantidad > 1)
+                        {
+                            <span>Subtotal: @item.Subtotal.ToString("C")</span>
+                        }
                     </div>
                     <form method="post" asp-page-handler="Quitar">
                         <input type="hidden" name="sku" value="@item.Producto.Sku" />

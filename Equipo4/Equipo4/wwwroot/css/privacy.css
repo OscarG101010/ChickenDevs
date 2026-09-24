@@ -20,6 +20,12 @@ main {
     padding: 10px 10px;
 }
 
+.footer .mapa{
+    display: flex;
+    flex-direction:column;
+    margin-left: auto;
+}
+
 h1, h3, p{
     text-align: center;
 }
