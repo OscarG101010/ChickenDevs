@@ -10,9 +10,12 @@ namespace Equipo4.Pages
         // Aqui es donde van los pollos:
         public List<Producto> Productos { get; } = new()
         {
-            new() { Sku = "SKU-001", Nombre = "Teclado mecánico", Precio = 899.00m, ImagenUrl = "/img/teclado.jpg" },
-            new() { Sku = "SKU-002", Nombre = "Mouse inalámbrico", Precio = 349.50m, ImagenUrl = "/img/mouse.jpg" },
-            new() { Sku = "SKU-003", Nombre = "Monitor 24\"", Precio = 2599.00m, ImagenUrl = "/img/monitor.jpg" },
+            new() { Sku = "SKU-001", Nombre = "Combo Individual", Precio = 130.00m, ImagenUrl = "/images/combo_individual.jpg" },
+            new() { Sku = "SKU-002", Nombre = "Combo Mediano", Precio = 260.00m, ImagenUrl = "/images/combo_mediano.jpg" },
+            new() { Sku = "SKU-003", Nombre = "Combo Familiar", Precio = 400.00m, ImagenUrl = "/images/combo_familiar.jpg" },
+            new() { Sku = "SKU-004", Nombre = "Quesadilla", Precio = 20.00m, ImagenUrl = "/images/quesadilla.jpeg" },
+            new() { Sku = "SKU-005", Nombre = "Salchicha Polaca", Precio = 45.00m, ImagenUrl = "/images/salchicha_polaca.jpeg" },
+            new() { Sku = "SKU-006", Nombre = "Salchicha Roja", Precio = 35.00m, ImagenUrl = "/images/salchicha_roja.jpeg" }
         };
 
         public Carrito Carrito { get; set; } = new(); // instancia carrito para que no sea null
