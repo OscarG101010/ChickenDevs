@@ -9,7 +9,27 @@
     --blanco_roto: #F8F9FA;
 }
 
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100; /* para que quede por encima de las tarjetas */
+
+    background: transparent;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
+}
+
+#menu {
+    scroll-margin-top: 110px;
+}
+
+html {
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     font-family: Arial, sans-serif;
     color: var(--texto);
     margin: 0;
@@ -23,7 +43,14 @@ main, .container {
     flex: 1;
 }
 
-.footer {
+main{
+    flex: 1;
+}
+
+.footer { /*esta lógica debió de ir en layout.css*/
+    display: flex;
+    flex-direction: row;
+
     font-family: Arial, sans-serif;
     background-color: var(--rojo);
     color: var(--blanco); 
@@ -95,9 +122,12 @@ p {
 
 .layout .carrito {
     flex: 1; /*sirve para distribuir el espacio disponible*/
-    border-radius: 10%;
+    border-radius: 10px;
+    align-self: flex-start; /*sirve para usar sólo espacio de elementos*/
+
     box-shadow: 1px 1px 10px;
     background-color: var(--crema);
+
     padding: 10px;
     margin: 10px;
 }
@@ -114,13 +144,42 @@ p {
     width: 40px;
     height: 40px;
     object-fit: cover;
-    border-radius: 10%;
+    border-radius: 10px;
+}
+
+.carrito .carrito-productos {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+
+.layout .carrito .carrito-productos img{
+    display: block;
+    margin: auto;
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 100px;
+}
+
+.layout .carrito .carrito-productos .imagen{
+    display: flex;
+    flex-direction: column;
+}
+
+.layout .carrito .carrito-productos .detalles{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
 }
 
 .layout .carrito .btn {
     border-radius: 10px;
     background-color: var(--rojo);
     transition: background-color 0.3s ease;
+
+    margin-bottom: 10px;
 }
 
 .layout .carrito .btn:hover {
@@ -165,4 +224,15 @@ p {
     margin-top: 5px;
     margin-bottom: 5px;
     text-align: center;
+}
+
+html,
+body {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+    display: none;
 }

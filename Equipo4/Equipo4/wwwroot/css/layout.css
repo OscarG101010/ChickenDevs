@@ -1,0 +1,25 @@
+﻿.navbar-pollo {
+    background-color: #F2E474;
+    margin: 0 0 5px 5px 5px;
+}
+/* Tamaño del logo */
+.navbar-brand .logo {
+    height: 80px;
+    width: auto;
+}
+
+/* Navbar con esquinas redondeadas abajo */
+.navbar {
+    border-radius: 0 0 1rem 1rem;
+}
+
+/* Botones más redondos (Bootstrap 5 usa variables CSS) */
+.btn {
+    --bs-btn-border-radius: 2rem;
+}
+
+/* Tarjetas redondeadas */
+.card {
+    border-radius: 1rem;
+    overflow: hidden;
+}
