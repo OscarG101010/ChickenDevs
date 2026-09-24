@@ -29,8 +29,8 @@ main{
 .footer {
     font-family: Arial, sans-serif;
     color: var(--texto);
-    background-color: var(--rojo);
-    padding-left: 10px;
+    background-color: var(--amarillo);
+    padding: 10px 10px;
 }
 
 h1 {
@@ -79,8 +79,13 @@ p {
 }
 
 .layout .Productos .tarjeta img{
-    width: 80px;
-    height: 80px;
+    display: block;
+    margin: auto;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 100px;
 }
 
 .layout .Productos .tarjeta .btn {
@@ -129,6 +134,19 @@ p {
 
     width: 70px;
     height: 70px;
+
+    border-radius: 100px;
+}
+
+.layout .carrito .carrito-productos .imagen{
+    display: flex;
+    flex-direction: column;
+}
+
+.layout .carrito .carrito-productos .detalles{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
 }
 
 .layout .carrito .btn {

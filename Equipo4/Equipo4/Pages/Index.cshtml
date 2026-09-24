@@ -14,6 +14,7 @@
                 <hr/>
                 <small>@p.Sku</small>
                 <h3>@p.Nombre</h3>
+                <p>@p.Descripcion</p>
                 <p>@p.Precio.ToString("C")</p> <!-- Currency -->
                 <form method="post" asp-page-handler="Agregar">
                     <input type="hidden" name="sku" value="@p.Sku" />
@@ -34,11 +35,15 @@
                 @foreach (var item in Model.Carrito.Items)
                 {
                     <div class="linea">
-                        <img src="@item.Producto.ImagenUrl" alt="@item.Producto.Nombre" />
-                        <span>@item.Producto.Nombre</span>
-                        <span>Cantidad: @item.Cantidad</span>
-                        <span>c/u: @item.Subtotal</span>
-                        <span>@item.Subtotal.ToString("C")</span>
+                        <div class="imagen">
+                            <img src="@item.Producto.ImagenUrl" alt="@item.Producto.Nombre" />
+                            <span>@item.Producto.Nombre</span>
+                        </div>
+                        <div class="detalles">
+                            <span>Cantidad: @item.Cantidad</span>
+                            <span>Precio: @item.Producto.Precio</span>
+                            <span>Subtotal: @item.Subtotal.ToString("C")</span>
+                        </div>
                         <form method="post" asp-page-handler="Quitar">
                             <input type="hidden" name="sku" value="@item.Producto.Sku" />
                             <button type="submit" class="btn">Quitar</button>
@@ -48,13 +53,12 @@
             </div>
             <hr>
             <div class="carrito-subtotal">
-                <p>
-                    Subtotal: $0.00
-                </p>
+                <p>Subtotal: @Model.Carrito.GranSubtotal.ToString("C")</p>
+                <p>IVA (16%): @Model.Carrito.Iva.ToString("C")</p>
             </div>
             <div class="carrito-total">
                 <p><b>
-                        Total: $0.00
+                        Total: @Model.Carrito.Total.ToString("C")
                 </b></p>
             </div>
             <hr>

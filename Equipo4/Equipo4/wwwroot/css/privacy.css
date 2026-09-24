@@ -1,0 +1,19 @@
+﻿body {
+    background-color: #BD0B0B;
+}
+
+h3, p{
+    text-align: center;
+}
+
+.tarjeta{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.tarjeta .miembros{
+    border: 1px solid black;
+    border-radius: 10px;
+}

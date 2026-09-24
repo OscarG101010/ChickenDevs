@@ -3,7 +3,11 @@
     public class Carrito
     {
         public List<ItemCarrito> Items { get; set; } = new List<ItemCarrito>();
-        public decimal Total => Items.Sum(i => i.Subtotal);
+
+        public const decimal TasaIva = 0.16m;
+        public decimal GranSubtotal => Items.Sum(i => i.Subtotal);
+        public decimal Iva => Math.Round(GranSubtotal * TasaIva, 2);
+        public decimal Total => GranSubtotal + Iva;
 
         public void Agregar(Producto p)
         {
