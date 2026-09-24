@@ -1,0 +1,88 @@
+﻿:root {
+    --rojo: #C0392B;
+    --rojo-oscuro: #BD0B0B;
+    --amarillo: #F2E474;
+    --crema: #F0EADD;
+    --blanco: #FFFFFF;
+    --texto: #2B2B2B;
+    --gris: #808080;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--texto);
+    margin: 0;
+    background-color: var(--amarillo)
+}
+
+.footer {
+    font-family: Arial, sans-serif;
+    color: var(--texto);
+    background-color: var(--rojo);
+    padding-left: 10px;
+}
+
+h1 {
+    font-size: 2rem;
+    text-shadow: 1px 1px 2px var(--crema), 1px 1px 1px var(--amarillo);
+}
+
+h2 {
+    font-size: 1.5rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+.layout {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+    background-color: var(--rojo-oscuro)
+}
+
+.layout .Productos {
+    flex: 3; /*en este caso se distribuye en los dos hijos*/
+    padding-top: 10px;
+}
+
+.layout .carrito {
+    flex: 1; /*sirve para distribuir el espacio disponible*/
+    border-radius: 10%;
+    box-shadow: 1px 1px 10px;
+    background-color: var(--crema);
+    padding: 10px;
+    margin: 10px;
+}
+
+.layout .carrito .carrito-encabezado{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.layout .carrito .carrito-encabezado img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 10%;
+}
+
+.layout .carrito .btn {
+    border-radius: 10px;
+    background-color: var(--rojo);
+    transition: background-color 0.3s ease;
+}
+
+.layout .carrito .btn:hover {
+    background-color: var(--rojo-oscuro);
+}
+
+.layout .carrito .btn:active {
+    transform: scale(0.90);
+    background-color: var(--rojo);
+}

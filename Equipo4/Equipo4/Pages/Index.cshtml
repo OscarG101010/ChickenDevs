@@ -3,8 +3,38 @@
 @{
     ViewData["Title"] = "Home page";
 }
+<link rel="stylesheet" href="~/css/Index.css"/>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="layout">
+    <div class="Productos">
+    <h1>Hola que tal como estas</h1>
+    </div>
+    <div class="carrito">
+        <div class="carrito-encabezado">
+            <img src="/images/carrito_compras.png" alt="Carrito de compras"/>
+            <h1>Carrito</h1>
+        </div>
+        <hr>
+        <div class="carrito-productos">
+            <p>
+                Aquí van los productos 
+            </p>
+            <p>
+                Segundo producto de la lista, etc
+            </p>
+        </div>
+        <hr>
+        <div class="carrito-subtotal">
+            <p>
+                Subtotal: $0.00
+            </p>
+        </div>
+        <div class="carrito-total">
+            <p><b>
+                Total: $0.00
+            </p></b>
+        </div>
+        <hr>
+        <button type="submit" class="btn">Proceder al pago</button>
+    </div>
 </div>

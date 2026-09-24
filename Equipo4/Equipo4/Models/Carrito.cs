@@ -1,0 +1,26 @@
+﻿namespace Equipo4.Models
+{
+    public class Carrito
+    {
+        public List<ItemCarrito> Items { get; set; } = new();
+        public decimal Total => Items.Sum(i => i.Subtotal);
+
+        public void Agregar(Producto p)
+        {
+            var item = Items.FirstOrDefault(i => i.Producto.Sku == p.Sku);
+            if (item is null)
+                Items.Add(new ItemCarrito { Producto = p, Cantidad = 1 });
+            else
+                item.Cantidad++;
+        }
+
+        public void Quitar(string sku) => Items.RemoveAll(i => i.Producto.Sku == sku);
+    }
+    public class ItemCarrito
+    {
+        public Producto Producto { get; set; } = new();
+        public int Cantidad { get; set; }
+        public decimal Subtotal => Producto.Precio * Cantidad;
+    }
+
+}

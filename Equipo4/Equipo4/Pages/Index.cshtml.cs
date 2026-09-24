@@ -7,7 +7,6 @@ namespace Equipo4.Pages
     {
         public void OnGet()
         {
-
         }
     }
 }

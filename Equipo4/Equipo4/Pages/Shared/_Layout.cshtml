@@ -6,11 +6,11 @@
     <title>@ViewData["Title"] - Equipo4</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Equipo4.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
+        <!----
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">Equipo4</a>
@@ -30,15 +30,14 @@
                 </div>
             </div>
         </nav>
+        ---->
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+        <main role="main">
             @RenderBody()
         </main>
-    </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
+    <footer class="footer">
+        <div class="contenido">
             &copy; 2026 - Equipo4 - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
