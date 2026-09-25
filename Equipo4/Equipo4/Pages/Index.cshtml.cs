@@ -10,14 +10,12 @@ namespace Equipo4.Pages
         // Aqui es donde van los pollos:
         public List<Producto> Productos { get; } = new List<Producto>
         {
-            new Producto { Sku = "SKU-001", Nombre = "Combo Familiar", Precio = 600.00m, Descripcion = "Pollo entero (8 piezas), tortillas, salchicha y totopos", ImagenUrl = "/images/combo_1.jpg" },
-            new Producto { Sku = "SKU-002", Nombre = "Combo Pareja", Precio = 334.50m, Descripcion = "Medio pollo (4 piezas), tortillas, salchicha y totopos", ImagenUrl = "/images/combo_1.jpg" },
-            new Producto { Sku = "SKU-003", Nombre = "Combo Individual", Precio = 135.00m, Descripcion = "2 piezas de pollo, tortillas y totopos", ImagenUrl = "/images/combo_1.jpg" },
-            new Producto { Sku ="SKU-005", Nombre = "Pollo entero", Precio = 449.99m, Descripcion = "8 piezas de pollo", ImagenUrl = "/images/pollo_entero.jpg" },
-            new Producto { Sku ="SKU-004", Nombre = "Medio pollo", Precio = 249.99m, Descripcion = "4 piezas de pollo", ImagenUrl = "/images/combo_1.jpg" },  
-            new Producto { Sku ="SKU-006", Nombre = "Pechuga de pollo", Precio = 79.99m, Descripcion = "2 piezas de pechuga de pollo", ImagenUrl = "/images/combo_1.jpg" },
-            new Producto { Sku ="SKU-007", Nombre = "Tortillas", Precio = 49.99m, Descripcion = "medio kilo de tortillas", ImagenUrl = "/images/combo_1.jpg" },
-            new Producto { Sku ="SKU-008", Nombre = "Salchicha", Precio = 39.99m, Descripcion = "2 piezas de salchicha", ImagenUrl = "/images/combo_1.jpg" },
+            new Producto { Sku = "SKU-001", Nombre = "Combo Individual", Precio = 130.00m, Descripcion = "2 piezas de pollo, tortillas y totopos", ImagenUrl = "/images/combo_individual.jpg" },
+            new Producto { Sku = "SKU-002", Nombre = "Combo Mediano", Precio = 260.00m, Descripcion = "Medio pollo (4 piezas), tortillas, salchicha y totopos", ImagenUrl = "/images/combo_mediano.jpg" },
+            new Producto { Sku = "SKU-003", Nombre = "Combo Familiar", Precio = 400.00m, Descripcion = "Pollo entero (8 piezas), tortillas, salchicha y totopos", ImagenUrl = "/images/combo_familiar.jpg" },
+            new Producto { Sku = "SKU-004", Nombre = "Quesadilla", Precio = 45.00m, Descripcion = "Quesadilla en tortilla grande con queso asadero", ImagenUrl = "/images/quesadilla.jpeg" },
+            new Producto { Sku = "SKU-005", Nombre = "Salchicha Polaca", Precio = 45.00m, Descripcion = "Orden individual asada al carbón", ImagenUrl = "/images/salchicha_polaca.jpeg" },
+            new Producto { Sku = "SKU-006", Nombre = "Salchicha Roja", Precio = 35.00m, Descripcion = "Orden individual asada al carbón", ImagenUrl = "/images/salchicha_roja.jpeg" }
         };
 
         public Carrito Carrito { get; set; } = new Carrito(); // instancia carrito para que no sea null
