@@ -54,11 +54,20 @@ main{
     font-family: Arial, sans-serif;
     background-color: var(--rojo);
     color: var(--blanco); 
-    padding: 15px 10px;
-    position: relative !important; 
-    margin-top: auto; /* empuja el footer hacia el final de la página */
+    padding: 15px 20px;
     width: 100%;
     box-sizing: border-box;
+}
+
+.footer .mapa { /*esta lógica debió de ir en layout.css*/
+    display: flex;
+    flex-direction: column;
+
+    margin-left: auto;
+    margin-right: auto;
+    
+    justify-content: center;
+    align-items: center;
 }
 
 .footer a {
@@ -92,28 +101,33 @@ p {
     /* background-color: var(--rojo-oscuro); eliminado */
 }
 
-    .layout .Productos {
-        display: flex;
-        flex: 3; /*en este caso se distribuye en los dos hijos*/
-        flex-wrap: wrap; /* salto de línea */
-        gap: 25px; /* espacio entre cada tarjeta */
-        justify-content: center; /* centra los elementos */
-    }
+.layout .Productos {
+    display: flex;
+    flex: 3; /*en este caso se distribuye en los dos hijos*/
+    flex-wrap: wrap; /* salto de línea */
+    gap: 25px; /* espacio entre cada tarjeta */
 
-    .layout .Productos .tarjeta {
-        background-color: var(--blanco);
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* sombra suave */
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 240px; /* tamano uniforme para todas las tarjetas */
-        text-align: center;
-    }
+    align-self: flex-start;
+    justify-content: center; /* centra los elementos */
+}
+
+.layout .Productos .tarjeta {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--blanco);
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* sombra suave */
+
+    padding: 15px;
+    width: 240px; /* tamano uniforme para todas las tarjetas */
+
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
 
 /*tamano de las imagenes*/
-.tarjeta img {
+.layout .tarjeta img {
     width: 100%; 
     height: 200px; 
     object-fit: cover; /* evita que la imagen se deforme o se apachurre, recortando el excedente de forma centrada */
@@ -123,7 +137,8 @@ p {
 .layout .carrito {
     flex: 1; /*sirve para distribuir el espacio disponible*/
     border-radius: 10px;
-    align-self: flex-start; /*sirve para usar sólo espacio de elementos*/
+    align-self: flex-start; /*sirve para usar sólo espacio de elementos, evita que se estire verticalmente*/
+    position: sticky;
 
     box-shadow: 1px 1px 10px;
     background-color: var(--crema);
@@ -135,8 +150,10 @@ p {
 .layout .carrito .carrito-encabezado{
     display: flex;
     flex-direction: row;
+
     align-items: center;
     justify-content: center;
+
     padding: 10px;
 }
 
@@ -163,14 +180,44 @@ p {
     border-radius: 100px;
 }
 
-.layout .carrito .carrito-productos .imagen{
+.layout .carrito .carrito-productos .imagen {
     display: flex;
     flex-direction: column;
+
+    padding: 10px;
+    text-align: center;
 }
 
 .layout .carrito .carrito-productos .detalles{
     display: flex;
     flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.layout .carrito .carrito-subtotal{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.layout .carrito .carrito-total {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.layout .carrito .boton {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
     padding: 5px;
 }
 
@@ -210,13 +257,13 @@ p {
     transition: background-color 0.3s ease, transform 0.1s ease;
 }
 
-    .tarjeta button:hover {
-        background-color: var(--rojo-oscuro);
-    }
+.tarjeta button:hover {
+    background-color: var(--rojo-oscuro);
+}
 
-    .tarjeta button:active {
-        transform: scale(0.95);
-    }
+.tarjeta button:active {
+    transform: scale(0.95);
+}
 
 .tarjeta .sku {
     color: var(--gris);

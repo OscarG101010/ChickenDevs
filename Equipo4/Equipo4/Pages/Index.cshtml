@@ -45,10 +45,12 @@
                             <span>Subtotal: @item.Subtotal.ToString("C")</span>
                         }
                     </div>
-                    <form method="post" asp-page-handler="Quitar">
-                        <input type="hidden" name="sku" value="@item.Producto.Sku" />
-                        <button type="submit" class="btn">Quitar</button>
-                    </form>
+                    <div class="boton">
+                        <form method="post" asp-page-handler="Quitar">
+                            <input type="hidden" name="sku" value="@item.Producto.Sku" />
+                            <button type="submit" class="btn">Quitar</button>
+                        </form>
+                    </div>
                 }
             </div>
             <hr>
@@ -62,7 +64,9 @@
                 </b></p>
             </div>
             <hr>
-            <button type="submit" class="btn" onclick="alert('¡¡¡FELICIDADES!!!')">Proceder al pago</button>
+            <div class="boton">
+                <button type="submit" class="btn" id="botonConfeti" onclick="alert('¡¡¡FELICIDADES!!!')">Proceder al pago</button>
+            </div>
         </div>
     }
 </div>
